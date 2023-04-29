@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="foodBasketFragment"
+            type="com.example.foodr.ui.fragment.FoodBasketFragment" />
+        <variable
+            name="basketAdapter"
+            type="com.example.foodr.ui.adapter.FoodBasketListAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.FoodBasketFragment">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFoodBasket"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adapter="@{basketAdapter}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+        <ImageView
+            android:id="@+id/btnBackBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar3"
+            app:srcCompat="@drawable/arrow_back" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sepetim"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar3"
+            app:layout_constraintStart_toStartOf="@+id/toolbar3"
+            app:layout_constraintTop_toTopOf="@+id/toolbar3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
